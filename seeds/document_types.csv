@@ -1,0 +1,48 @@
+# =============================================================================
+# document_types.csv — Required Documents
+# =============================================================================
+# Defines which documents are required at each stage of the process.
+# Can be scoped to a specific programme, site, or apply globally.
+#
+# COLUMNS:
+#   key             Internal identifier. Unique. Lowercase, underscores.
+#                   Examples: cv, motivation_letter, criminal_record
+#
+#   name_de         Display name in German.
+#   name_en         Display name in English.
+#
+#   description_de  Short explanation shown to volunteer (German).
+#   description_en  Short explanation shown to volunteer (English).
+#
+#   required_at     At which stage this document is required:
+#                   application  = submitted with first application
+#                   placement    = required after placement is tentatively confirmed
+#                   pre_departure= required before departure
+#
+#   scope           Who must provide this document:
+#                   all          = all volunteers
+#                   program:<slug>  = only volunteers in this programme
+#                   site:<slug>     = only volunteers at this site
+#
+#   requested_by    Who can request this document from the volunteer:
+#                   admin        = only NGO admin can request
+#                   site         = placement site can also request (via admin approval)
+#                   site_direct  = site can request directly (no admin approval)
+#
+#   max_size_mb     Maximum file size in megabytes.
+#
+#   accepted_formats  Comma-separated MIME types.
+#                     Common: application/pdf,image/jpeg,image/png,
+#                             application/msword,
+#                             application/vnd.openxmlformats-officedocument.wordprocessingml.document
+# =============================================================================
+key,name_de,name_en,description_de,description_en,required_at,scope,requested_by,max_size_mb,accepted_formats
+cv,"Lebenslauf","Curriculum Vitae","Aktueller Lebenslauf (max. 2 Seiten)","Current CV (max. 2 pages)",placement,all,admin,5,"application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+motivation_letter,"Motivationsschreiben","Motivation Letter","Warum möchtest du diesen Freiwilligendienst leisten? (min. 300 Wörter)","Why do you want to do this volunteer service? (min. 300 words)",placement,all,admin,5,"application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+criminal_record,"Erweitertes Führungszeugnis","Extended Criminal Record","Erweitertes Führungszeugnis (nicht älter als 3 Monate). Beantrage es beim Einwohnermeldeamt.","Extended criminal record check (not older than 3 months).",pre_departure,all,site,5,"application/pdf,image/jpeg,image/png"
+health_certificate,"Ärztliches Attest","Health Certificate","Ärztliches Attest über Reise- und Einsatztauglichkeit.","Medical certificate confirming fitness for travel and service.",pre_departure,all,admin,5,"application/pdf,image/jpeg,image/png"
+vaccination_record,"Impfnachweis","Vaccination Record","Aktueller Impfnachweis. Anforderungen je nach Einsatzland.","Current vaccination record. Requirements vary by country.",pre_departure,all,site,10,"application/pdf,image/jpeg,image/png"
+passport_copy,"Reisepass-Kopie","Passport Copy","Kopie des gültigen Reisepasses (Haupt- und Datenseite).","Copy of valid passport (main page and data page).",pre_departure,all,admin,5,"application/pdf,image/jpeg,image/png"
+language_certificate,"Sprachnachweis","Language Certificate","Nachweis der erforderlichen Sprachkenntnisse (z.B. Goethe, DELE, Cambridge).","Proof of required language skills.",placement,"program:bildung-gh-2026,program:gesundheit-pe-2026",site,10,"application/pdf,image/jpeg,image/png"
+insurance_proof,"Versicherungsnachweis","Insurance Proof","Nachweis einer gültigen Auslandskrankenversicherung für den Einsatzzeitraum.","Proof of valid international health insurance for the service period.",pre_departure,"program:umwelt-mx-2026,program:bildung-gh-2026,program:gesundheit-pe-2026",admin,5,"application/pdf,image/jpeg,image/png"
+site_placement_desc,"Einsatzbeschreibung","Placement Description","Detaillierte Beschreibung des Einsatzes (wird von der Einsatzstelle hochgeladen).","Detailed description of the placement (uploaded by the placement site).",placement,all,site_direct,10,"application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"

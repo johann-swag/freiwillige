@@ -1,0 +1,34 @@
+# =============================================================================
+# users.csv — Initial User Accounts
+# =============================================================================
+# Users defined here are created in Zitadel and the application DB.
+# The admin user from tenant.env is always created automatically.
+# Use this file for additional coordinators and site managers.
+#
+# COLUMNS:
+#   email           Must be unique. Used as login.
+#
+#   first_name      User's first name.
+#   last_name       User's last name.
+#
+#   role            One of:
+#                   org_admin     = NGO coordinator, sees everything
+#                   site_manager  = Placement site contact, sees only their site
+#
+#   site_slug       Required when role=site_manager.
+#                   Must match a slug from sites.csv.
+#                   Leave empty for org_admin.
+#
+#   language        UI language preference: de | en | fr | es
+#
+#   send_invite     true | false
+#                   If true, Zitadel sends a setup email with password link.
+#                   If false, account is created but no email sent
+#                   (useful for test accounts).
+# =============================================================================
+email,first_name,last_name,role,site_slug,language,send_invite
+koordination@freunde-waldorf.de,Maria,Mustermann,org_admin,,de,false
+ausland@freunde-waldorf.de,Klaus,Beispiel,org_admin,,de,true
+carlos.ruiz@naturschutz-oaxaca.mx,Carlos,Ruiz,site_manager,naturschutz-oaxaca,es,true
+k.asante@waldorfschool-accra.gh,Kwame,Asante,site_manager,schule-accra-nord,en,true
+t.maier@heilpaed-stuttgart.de,Thomas,Maier,site_manager,heilpaed-stuttgart,de,true

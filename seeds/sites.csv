@@ -1,0 +1,53 @@
+# =============================================================================
+# sites.csv — Placement Sites (Einsatzstellen)
+# =============================================================================
+# Each row defines one placement site.
+# Sites belong to a programme (via program_slug).
+#
+# COLUMNS:
+#   slug            Unique URL-safe identifier.
+#
+#   name            Display name of the placement site.
+#
+#   program_slug    Must match a slug from programs.csv.
+#
+#   country         ISO 3166-1 alpha-2.
+#
+#   city            City name (free text).
+#
+#   address         Full address. Optional. Use quotes if contains commas.
+#
+#   contact_name    Name of the on-site contact person.
+#
+#   contact_email   Email of the on-site contact.
+#
+#   contact_phone   Phone number. Optional.
+#
+#   focus_areas     Comma-separated. Same values as programs.csv.
+#
+#   required_languages  Comma-separated language requirements.
+#                       Format: <lang>-<level>
+#                       Examples: es-B2, en-C1, de-native, fr-B1
+#                       Levels: A1 A2 B1 B2 C1 C2 native
+#
+#   capacity        Maximum number of volunteers at this site simultaneously.
+#
+#   duration_months How long a placement lasts: 3 | 6 | 9 | 12 | 18
+#
+#   formbricks_form_id  Optional. If set, this site uses a custom Formbricks
+#                       application form. Leave empty to use the default form.
+#
+#   rocket_channel  Optional. Rocket.Chat channel slug for this site.
+#                   Example: naturschutz-oaxaca
+#                   Leave empty if Rocket.Chat is not enabled.
+#
+#   description     Free text. Shown to volunteers in the pool view.
+# =============================================================================
+slug,name,program_slug,country,city,address,contact_name,contact_email,contact_phone,focus_areas,required_languages,capacity,duration_months,formbricks_form_id,rocket_channel,description
+naturschutz-oaxaca,"Naturschutzstation Oaxaca",umwelt-mx-2026,MX,Oaxaca,"Carretera Oaxaca-Puerto Ángel Km 10",Carlos Ruiz,carlos.ruiz@naturschutz-oaxaca.mx,+52-951-555-0100,"ecology,agriculture",es-B2,4,6,,naturschutz-oaxaca,"Mitarbeit bei Wiederaufforstung und Monitoring im Biosphärenreservat Sierra de Juárez"
+regenwald-chiapas,"Regenwald Schutzprojekt Chiapas",umwelt-mx-2026,MX,San Cristóbal de las Casas,"Camino al Bosque 45",Maria Lopez,m.lopez@bosque-chiapas.mx,+52-967-555-0200,ecology,"es-B1,en-B2",2,3,,regenwald-chiapas,"Monitoring und Schutz des Regenwalds in Chiapas — kurzer intensiver Einsatz"
+schule-accra-nord,"Schule Accra Nord",bildung-gh-2026,GH,Accra,"North Legon Road, Accra",Kwame Asante,k.asante@waldorfschool-accra.gh,+233-302-555-0300,education,"en-B2",3,12,,schule-accra-nord,"Unterrichtsunterstützung und außerschulische Aktivitäten an der Waldorfschule Accra Nord"
+schule-kumasi,"Waldorfschule Kumasi",bildung-gh-2026,GH,Kumasi,"Adum Rd, Kumasi",Ama Owusu,a.owusu@waldorf-kumasi.gh,+233-322-555-0400,education,"en-C1",2,12,,schule-kumasi,"Schule im Herzen von Ghana — Unterricht und Projekte"
+klinik-lima-sur,"Gemeinschaftsklinik Lima Sur",gesundheit-pe-2026,PE,Lima,"Av. Los Héroes 205, San Juan de Miraflores",Dr. Rosa Vargas,r.vargas@clinica-lima.pe,+51-1-555-0500,health,"es-B1",3,6,,klinik-lima-sur,"Assistenz in der Primärversorgung und Gesundheitsförderung in einem Armenviertel Limas"
+sozial-berlin,"Anthroposophisches Sozialwerk Berlin",sozial-de-2026,DE,Berlin,"Musterstraße 12, 10115 Berlin",Anna Schmidt,a.schmidt@asb-berlin.de,+49-30-555-0600,social,"de-B2",5,12,,sozial-berlin,"Begleitung von Menschen mit Assistenzbedarf in Berlin"
+heilpaed-stuttgart,"Heilpädagogische Einrichtung Stuttgart",sozial-de-2026,DE,Stuttgart,"Waldorfweg 3, 70174 Stuttgart",Thomas Maier,t.maier@heilpaed-stuttgart.de,+49-711-555-0700,"social,education","de-B2",4,12,,heilpaed-stuttgart,"Begleitung von Kindern und Jugendlichen mit Assistenzbedarf"

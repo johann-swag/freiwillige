@@ -1,0 +1,41 @@
+# =============================================================================
+# programs.csv — Volunteer Programmes
+# =============================================================================
+# Each row defines one programme.
+# Programmes group placement sites and give them a shared context.
+#
+# COLUMNS:
+#   slug            URL-safe identifier. Must be unique. Cannot be changed later.
+#                   Example: umwelt-mx-2026
+#
+#   name            Display name shown in UI and emails.
+#                   Example: Umwelt & Naturschutz Mexiko 2026
+#
+#   service_type    One of: fsj | foj | bfd | weltwaerts | ijfd | other
+#                   fsj       = Freiwilliges Soziales Jahr
+#                   foj       = Freiwilliges Ökologisches Jahr
+#                   bfd       = Bundesfreiwilligendienst
+#                   weltwaerts= weltwärts programme (abroad)
+#                   ijfd      = Internationaler Jugendfreiwilligendienst
+#
+#   focus_areas     Comma-separated from: education | ecology | social |
+#                   health | agriculture | culture | other
+#
+#   country         ISO 3166-1 alpha-2 country code of the target country.
+#                   Examples: MX DE GH PE JP UG KE
+#
+#   start_date      YYYY-MM-DD
+#   end_date        YYYY-MM-DD
+#
+#   status          planned | active | completed | cancelled
+#
+#   coordinator_email   Email of the coordinator user (must exist in users.csv
+#                       or already be in the system)
+#
+#   description     Free text. Optional. Use quotes if it contains commas.
+# =============================================================================
+slug,name,service_type,focus_areas,country,start_date,end_date,status,coordinator_email,description
+umwelt-mx-2026,"Umwelt & Naturschutz Mexiko 2026",weltwaerts,"ecology,agriculture",MX,2026-09-01,2027-08-31,planned,koordination@freunde-waldorf.de,"Einsatz in Biosphärenreservaten und Naturschutzprojekten in Mexiko"
+bildung-gh-2026,"Bildung und Schule Ghana 2026",fsj,education,GH,2026-09-01,2027-08-31,planned,koordination@freunde-waldorf.de,"Unterstützung im Unterricht an Waldorfschulen in Ghana"
+sozial-de-2026,"Freiwilliges Soziales Jahr Deutschland 2026",fsj,"social,education",DE,2026-09-01,2027-08-31,active,koordination@freunde-waldorf.de,"FSJ in sozialen Einrichtungen deutschlandweit"
+gesundheit-pe-2026,"Gesundheit und Soziales Peru 2026",weltwaerts,"health,social",PE,2026-09-01,2027-08-31,planned,koordination@freunde-waldorf.de,"Mitarbeit in Gemeinschaftskliniken und sozialen Projekten in Lima"
